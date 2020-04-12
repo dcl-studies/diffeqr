@@ -1,10 +1,10 @@
-Solving ODEs with the diffeqr package
+Solving ODEs with the diffeqr R package
 ================
 Bill Behrman
-2020-04-10
+2020-04-12
 
-  - [Simple ODE](#simple-ode)
-  - [System of ODEs](#system-of-odes)
+  - [Scalar equation](#scalar-equation)
+  - [System of equations](#system-of-equations)
   - [Tolerances and time points](#tolerances-and-time-points)
   - [Alternate solvers](#alternate-solvers)
   - [Compiled derivative function](#compiled-derivative-function)
@@ -23,7 +23,7 @@ diffeq_setup() %>%
 The following is a reimplementation of code on the [diffeqr GitHub
 site](https://github.com/SciML/diffeqr).
 
-## Simple ODE
+## Scalar equation
 
 ``` r
 f <- function(u, p, t) {
@@ -46,7 +46,7 @@ sol %>%
 
 ![](diffeqr_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 
-## System of ODEs
+## System of equations
 
 ``` r
 f <- function(u, p, t) {
@@ -180,7 +180,7 @@ v
     ## # A tibble: 2 x 3
     ##   expression                                                    min median
     ##   <bch:expr>                                                  <dbl>  <dbl>
-    ## 1 sol <- ode.solve(f = f, u0 = u0, tspan = tspan, p = p)       39.0   35.0
+    ## 1 sol <- ode.solve(f = f, u0 = u0, tspan = tspan, p = p)       37.6   35.4
     ## 2 sol <- ode.solve(f = "f_jl", u0 = u0, tspan = tspan, p = p)   1      1
 
 The code with the compiled derivative function runs about 35 times

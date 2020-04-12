@@ -1,5 +1,5 @@
 ---
-title: "Solving ODEs with the diffeqr package"
+title: "Solving ODEs with the diffeqr R package"
 author: "Bill Behrman"
 date: "`r Sys.Date()`"
 output: 
@@ -24,7 +24,7 @@ diffeq_setup() %>%
 
 The following is a reimplementation of code on the [diffeqr GitHub site](https://github.com/SciML/diffeqr).
 
-## Simple ODE
+## Scalar equation
 
 ```{r}
 f <- function(u, p, t) {
@@ -45,7 +45,7 @@ sol %>%
   geom_line()
 ```
 
-## System of ODEs
+## System of equations
 
 ```{r}
 f <- function(u, p, t) {
