@@ -1,1 +1,1 @@
-# diffeqr
+# diffeqr R ODE package
